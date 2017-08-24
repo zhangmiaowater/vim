@@ -6,5 +6,5 @@
 
 
 ### open vim
-> :BundleClean
-> :BundleInstall
+    :BundleClean
+    :BundleInstall
