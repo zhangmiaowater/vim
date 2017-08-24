@@ -1,4 +1,4 @@
-# vim
+# vim script
 
 ### install Vundle command
 
