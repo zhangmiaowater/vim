@@ -1,29 +1,28 @@
 """"""""""""""""""""""""""""""""""""
 " install plugin
 """"""""""""""""""""""""""""""""""""
-set nocompatible " Vundle needed,is required 关闭 vi 兼容模式
-filetype off " Vundle needed,is required
-
+set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins 设置插件安装位置，不需要更改
 " call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required 安装Vundle,必须
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugins 其他插件
+" install other Plugins, here can add custom plugin
 Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line 所有插件必须在上面添加完毕
-call vundle#end()            " required 必须
+call vundle#end()
 
 
 """"""""""""""""""""""""""""""""""""
 " settings
 """"""""""""""""""""""""""""""""""""
 syntax on " 自动语法高亮
+filetype plugin indent on " 文件类型检测 该类型相关的插件 该类型文件的自动缩进
 set number " 显示行号
 set ruler " 打开状态栏标尺
 set tabstop=4 " 设定 tab 长度为 4
