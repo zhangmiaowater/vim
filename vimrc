@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " install other Plugins, here can add custom plugin
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line 所有插件必须在上面添加完毕
 call vundle#end()
@@ -32,6 +33,7 @@ set autoindent " 自动缩进
 set expandtab " 缩进用空格表示
 set smartindent " 开启新行时使用智能自动缩进
 set nowrap " 禁止自动换行
+set nobackup " 禁止备份
 set noswapfile " 不产生交换文件
 set fileformat=unix " 以unix格式存储文件
 set encoding=utf-8 " vim内部使用的字符编码
