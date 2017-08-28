@@ -1,12 +1,24 @@
-# vim script
+entOS           |  支持
+-----------------| --------------
+Ubuntu           |  支持
+Mac              |  支持
 
-### copy vimrc file to your own path(cd to your vim path which clone from here)
-    cp .vimrc ~/.vimrc
+# 目录结构
 
-### install Vundle command
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+.
+├── README.md   使用说明
+├── setup.sh    环境安装
+└── vimrc       vim配置
 
+```
 
-### open vim and type the command below
-    :BundleClean
-    :BundleInstall
+# 安装说明
+
+* git clone https://github.com/zhangmiaowater/vim.git
+* cd vim
+* bash setup.sh
+
+# 开源协议
+* 第三方类库版权参照对应作者或组织
+* 本人写的没有任何版权欢迎使用
