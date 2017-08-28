@@ -10,6 +10,12 @@ CentOS           |  支持
 Ubuntu           |  支持
 Mac              |  支持
 
+# 安装说明
+
+* git clone https://github.com/zhangmiaowater/vim.git
+* cd vim
+* bash setup.sh
+
 # 目录结构
 
 ```
@@ -19,12 +25,6 @@ Mac              |  支持
 └── vimrc       vim配置
 
 ```
-
-# 安装说明
-
-* git clone https://github.com/zhangmiaowater/vim.git
-* cd vim
-* bash setup.sh
 
 # 开源协议
 * 第三方类库版权参照对应作者或组织
