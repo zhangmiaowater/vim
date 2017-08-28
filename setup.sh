@@ -3,15 +3,14 @@
 set -e
 
 echo "It will take some minutes, please be patient"
-echo "安装需要一些时间，请耐心等待"
 
 root_dir=`pwd`
 vim_alias_dir=$HOME/.vim
 vim_rc=$HOME/.vimrc
-d=`date +%Y%m%d-%H%M%S`
 
 function exe_cmd() {
-    echo $1
+    local t=`date`
+    echo "$t: $1"
     eval $1
 }
 
@@ -43,8 +42,5 @@ exe_cmd "cp -rf $root_dir/vimrc $vim_rc"
 exe_cmd 'git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
 echo "Installing..."
-echo "正在安装......"
 exe_cmd 'vim +PluginInstall +qall'
 echo "Installation is complete"
-echo "安装完成"
-
