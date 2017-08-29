@@ -151,3 +151,4 @@ let Tlist_Use_Left_Window=1 " Set taglist window in right, delete thefollowing l
 let Tlist_Auto_Update=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow = 1 " Auto close Tlist when exiting file当仅剩一个窗口时退出vim
+let Tlist_Ctags_Cmd="right"
