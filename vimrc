@@ -147,8 +147,7 @@ let g:syntastic_check_on_wq = 0
 
 let Tlist_Show_One_File=1 " Let taglist display a list of functions formultiple files at the same time 让taglist可以同时展示多个文件的函数列表
 let Tlist_Exit_OnlyWindow=1 " Quit vim when taglist is the last one当taglist是最后一个分割窗口时，自动推出vim
-let Tlist_Use_Left_Window=1 " Set taglist window in right, delete thefollowing line if you don't like 把Tlist设置在左边，如果不喜欢可以删除
+let Tlist_Use_Right_Window=1 " Set taglist window in right, delete thefollowing line if you don't like 把Tlist设置在左边，如果不喜欢可以删除
 let Tlist_Auto_Update=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow = 1 " Auto close Tlist when exiting file当仅剩一个窗口时退出vim
-let Tlist_Ctags_Cmd="right"
