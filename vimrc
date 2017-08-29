@@ -13,7 +13,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " install other Plugins, here can add custom plugin
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/taglist.vim'
+
 
 " All of your Plugins must be added before the following line 所有插件必须在上面添加完毕
 call vundle#end()
@@ -50,6 +55,8 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 "set foldenable " 启用折叠
 "set foldmethod=syntax " 设置语法折叠
 "set foldcolumn=0 " 设置折叠区域的宽度
+" Allow backspacing over everything in insert mode. Configure backspace so it acts as it should act 删除键删除所有字符
+set backspace=eol,start,indent " Allow backspacing over everything in insert mode. Configure backspace so it acts as it should act 删除键删除所有字符"
 
 " Smart way to move between windows 灵敏的转换窗口
 map <C-j> <C-W>j
@@ -90,3 +97,57 @@ let NERDTreeWinSize=40
 " add NERDTREE plugin for dir view on left window,making a shortcut here Ctrl+n=:NERDTreeToggle
 nmap <C-n> :NERDTreeToggle<cr>
 
+""""""""""""""""""""""""""""""""""""
+" Neocomplete
+" """"""""""""""""""""""""""""""""""""
+
+ let g:acp_enableAtStartup = 0 " Disable AutoComplPop
+ let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
+ let g:neocomplete#enable_smart_case = 1 " Use smartcase.
+ let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax
+" keyword length.
+
+" Define keyword
+
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Enable omni completion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+""""""""""""""""""""""""""""""""""""
+" vim-syntastic/syntastic 语法检测
+" """"""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+if has("SyntasticStatuslineFlag")
+  set statusline+=%{SyntasticStatuslineFlag()}
+endif
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""""""""
+" Tlist
+" """"""""""""""""""""""""""""""""""""
+" "if &diff
+" "    let Tlist_Auto_Open=0 " don't auto open when compare two files
+" 当对比文件时不打开Tlist
+" "else
+" "    let Tlist_Auto_Open=1 " auto pen Tlist when open a file
+" 打开文件时自动打开Tlist
+" "endif
+
+let Tlist_Show_One_File=1 " Let taglist display a list of functions formultiple files at the same time 让taglist可以同时展示多个文件的函数列表
+let Tlist_Exit_OnlyWindow=1 " Quit vim when taglist is the last one当taglist是最后一个分割窗口时，自动推出vim
+let Tlist_Use_Left_Window=1 " Set taglist window in right, delete thefollowing line if you don't like 把Tlist设置在左边，如果不喜欢可以删除
+let Tlist_Auto_Update=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Exit_OnlyWindow = 1 " Auto close Tlist when exiting file当仅剩一个窗口时退出vim

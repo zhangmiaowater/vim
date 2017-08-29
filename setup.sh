@@ -7,6 +7,7 @@ echo "It will take some minutes, please be patient"
 root_dir=`pwd`
 vim_alias_dir=$HOME/.vim
 vim_rc=$HOME/.vimrc
+d=`date +%Y%m%d-%H%M%S`
 
 function exe_cmd() {
     local t=`date`
