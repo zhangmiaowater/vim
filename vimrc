@@ -57,6 +57,17 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 "set foldcolumn=0 " 设置折叠区域的宽度
 " Allow backspacing over everything in insert mode. Configure backspace so it acts as it should act 删除键删除所有字符
 set backspace=eol,start,indent " Allow backspacing over everything in insert mode. Configure backspace so it acts as it should act 删除键删除所有字符"
+set dictionary+=~/.vim/php_funclist.txt    
+set complete-=k complete+=k
+function! InsertTabWrapper()
+    let col=col('.')-1
+    if !col || getline('.')[col-1] !~ '\k'
+        return "\<TAB>"
+    else
+        return "\<C-N>"
+    endif
+endfunction
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 
 " Smart way to move between windows 灵敏的转换窗口
 map <C-j> <C-W>j
