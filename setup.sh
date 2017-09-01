@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 echo "It will take some minutes, please be patient"
@@ -40,7 +39,7 @@ if [ -e $vim_rc ]; then
 fi
 
 exe_cmd "cp -rf $root_dir/vimrc $vim_rc"
-exe_cmd 'git clone https://github.com/VundleVim/Vundle.vim.git ${vim_alias_dir}/bundle/Vundle.vim'
+exe_cmd "git clone https://github.com/VundleVim/Vundle.vim.git ${vim_alias_dir}/bundle/Vundle.vim"
 exe_cmd "cp -rf files/php_funclist.txt ${vim_alias_dir}/"
 echo "Installing..."
 exe_cmd 'vim +PluginInstall +qall'
