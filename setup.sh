@@ -24,6 +24,7 @@ elif which yum >/dev/null; then
     exe_cmd "cd vim"
     exe_cmd "./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-luainterp --enable-gui=gtk2 --enable-cscope --with-tlib=ncurses --prefix=/usr"
     exe_cmd "sudo make install"
+    exe_cmd "cd ../"
 
 elif which brew >/dev/null; then
     exe_cmd "brew install vim --with-lua git ctags"
