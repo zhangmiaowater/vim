@@ -162,3 +162,15 @@ let Tlist_Use_Right_Window=1 " Set taglist window in right, delete thefollowing 
 let Tlist_Auto_Update=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow = 1 " Auto close Tlist when exiting file当仅剩一个窗口时退出vim
+
+
+""""""""""""""""""""""""""""""""""""
+" 设置vim配色 配色来自tomorrow-theme 
+" """"""""""""""""""""""""""""""""""""
+syntax enable
+set background=dark
+" colorscheme Tomorrow
+" colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night
