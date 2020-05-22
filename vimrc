@@ -76,6 +76,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Switch tab 切换标签快捷键
+map <C-PageUp> :tabp<cr>
+map <C-PageDown> :tabn<cr>
 map ;1 :tabn 1<cr>
 map ;2 :tabn 2<cr>
 map ;3 :tabn 3<cr>
