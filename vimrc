@@ -1,3 +1,4 @@
+"wget https://raw.githubusercontent.com/zmwater/vim/master/vimrc -O ~/.vimrc
 """"""""""""""""""""""""""""""""""""
 " settings
 """"""""""""""""""""""""""""""""""""
