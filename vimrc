@@ -73,7 +73,7 @@ nmap <C-n> :NERDTreeToggle<cr>
 " tagbar
 "git clone https://github.com/preservim/tagbar.git ~/.vim/pack/plugins/start/tagbar
 """"""""""""""""""""""""""""""""""""
-nmap <C-b> :TagbarToggle<cr>
+nmap <C-l> :TagbarToggle<cr>
 
 """"""""""""""""""""""""""""""""""""
 " nerdcommenter
