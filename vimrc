@@ -62,6 +62,9 @@ map ;;8 :tabn 18<cr>
 map ;;9 :tabn 19<cr>
 map ;;0 :tabn 20<cr>
 
+" theme
+color torte
+
 """"""""""""""""""""""""""""""""""""
 " nerdtree
 "git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/plugins/start/nerdtree
