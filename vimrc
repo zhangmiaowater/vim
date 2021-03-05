@@ -119,3 +119,44 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 """"""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"自动对齐=号
+function! Align_equal()
+    "yank current visual selection to reg x
+    normal gv"xy
+    "put new string value in reg x
+    " would do your processing here in actual script
+    let lines = split(@x, "\n")
+    " calc the "=" rightest col
+    let col = 0
+    for line in lines
+        let pos = stridx(line, '=')
+        if col < pos
+            let col = pos
+        endif
+    endfor
+    " align the "="
+    if col > 0
+        let buf = []
+        for line in lines
+            let pos = stridx(line, '=')
+            if pos < col
+                let array = split(line, '=')
+                if len(array) >= 2
+                    let array[0] .= repeat(' ', col-pos)
+                    let line = join(array, '=')
+                endif
+            endif
+            let buf += [line]
+        endfor
+        let buf_string = join(buf, "\n")."\n"
+        let @x = buf_string
+    endif
+    "re-select area and delete
+    normal gvd
+    "paste new string value back in
+    normal k"xp
+endfunction
+
+noremap ,= <Esc>:call Align_equal() <CR>
