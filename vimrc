@@ -70,7 +70,7 @@ color torte
 "git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/plugins/start/nerdtree
 """"""""""""""""""""""""""""""""""""
 let NERDTreeShowHidden=1
-nmap <C-n> :NERDTreeToggle<cr>
+nmap <C-p> :NERDTreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""
 " tagbar
